@@ -2,8 +2,8 @@
 
 ## 依赖
 
-- Docker 1.12.0+
-- Docker Compose 1.9.0+
+- Docker 19.03.6+
+- Docker Compose 1.24.1+
 
 ## 部署
 
