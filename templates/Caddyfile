@@ -4,21 +4,15 @@
     / https://{host}{uri}
   }
 
-  log stdout
+  log {
+    output stdout
+  }
 
   # ssl
   tls {$ZEALOT_CERT_EMAIL}
 
   # serve assets of rails
-  root /app/public
+  root * /app/public
 
-  proxy / http://zealot:3000 {
-    except /assets /packs /uploads /config /favicon.ico /robots.txt
-
-    transparent
-    header_upstream X-Marotagem true
-    header_upstream Host {host}
-    header_upstream X-Real-IP {remote}
-    header_upstream X-Forwarded-For {remote}
-  }
+  reverse_proxy http://zealot:3000
 }
