@@ -1,0 +1,5 @@
+:443
+
+tls /etc/caddy/certs/zealot-popiron.ru.pem /etc/caddy/certs/zealot-popiron.ru-key.pem
+log
+reverse_proxy zealot
